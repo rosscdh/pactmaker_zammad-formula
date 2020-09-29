@@ -17,3 +17,11 @@ pactmaker_zammad_enable_service:
 pactmaker_zammad_start_service:
   service.running:
     - name: pactmaker_zammad
+
+pactmaker_zammad:
+  service.running:
+    - enable: True
+    - reload: True
+    - watch:
+      - file: {{ config.location }}/.env
+      - file: {{ config.location }}/docker-compose.yml
