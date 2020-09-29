@@ -7,9 +7,6 @@ After=network-online.target
 [Service]
 WorkingDirectory={{ config.location }}
 
-User=docker
-Group=docker
-
 EnvironmentFile={{ config.location }}/.env
 ExecStart=docker-compose up
 
