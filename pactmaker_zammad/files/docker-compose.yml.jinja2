@@ -4,5 +4,7 @@ services:
   pactmaker_zammad:
     image: {{ config.image }}
     restart: {{ config.restart }}
+    ports:
+    - {{ config.port }}:3000
     env_file:
-     - {{ config.location }}/.env
+    - {{ config.location }}/.env
