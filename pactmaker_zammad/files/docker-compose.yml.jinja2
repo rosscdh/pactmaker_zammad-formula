@@ -1,0 +1,8 @@
+{%- from "pactmaker_zammad/map.jinja" import config with context %}
+version: '3'
+services:
+  pactmaker_zammad:
+    image: {{ config.image }}
+    restart: {{ config.restart }}
+    env_file:
+     - {{ config.location }}/.env

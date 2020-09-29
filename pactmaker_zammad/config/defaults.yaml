@@ -1,0 +1,11 @@
+pactmaker_zammad:
+  location: /opt/pactmaker_zammad
+  image: rosscdh/pactmaker_zammad:latest
+  port: 3000
+  restart: UnlessStopped
+  limit_nofile: 65536
+  env:
+    ZAMMAD_API_TOKEN: 'example-token-123'
+    ZAMMAD_API_SERVER: 'http://zammad.example.com'
+    ZAMMAD_API_SERVER_PUBLIC: null
+    TITLE: 'My Pact Signer'

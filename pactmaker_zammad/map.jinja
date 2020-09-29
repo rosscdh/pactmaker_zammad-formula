@@ -1,0 +1,2 @@
+{% import_yaml 'pactmaker_zammad/config/defaults.yaml' as preconfig %}
+{% set config = salt.pillar.get( 'pactmaker_zammad', default=preconfig.pactmaker_zammad, merge=True ) %}
